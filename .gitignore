@@ -1,0 +1,10 @@
+*.mdf
+*ldf
+Azure Data Studio.app
+*.bak
+SisACCo
+SisACCo_log
+
+data
+log
+secrets

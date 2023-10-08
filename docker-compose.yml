@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64
+    ports:
+      - "1433:1433"
+    environment:
+      MSSQL_SA_PASSWORD: "1StrongPwd!!"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - .:/database-data
+      - ./data:/var/opt/mssql/data
+      - ./log:/var/opt/mssql/log
+      - ./secrets:/var/opt/mssql/secrets
