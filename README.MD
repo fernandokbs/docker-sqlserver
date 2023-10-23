@@ -23,10 +23,15 @@ GO
 
 
 ```bash
-RESTORE FILELISTONLY 
+RESTORE FILELISTONLY
 FROM DISK = '/database-data/bkpDoxa_20231013.bak'
 
 RESTORE DATABASE [DOXA] FROM DISK = '/database-data/bkpDoxa_20231013.bak'
 WITH MOVE 'SisACCo' TO '/database-data/SisACCo',
     MOVE 'SisACCo_log' TO '/database-data/SisACCo_log'
+```
+
+```bash
+ALTER LOGIN [sa] WITH CHECK_POLICY = OFF;
+ALTER LOGIN [sa] WITH PASSWORD=N'doxa20' 
 ```
